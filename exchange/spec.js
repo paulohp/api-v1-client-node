@@ -42,12 +42,12 @@ describe('exchange', function () {
 
     nock('https://blockchain.info')
       .get('/tobtc').query(true)
-      .reply(200, '1,234.1234');
+      .reply(200, '1.41442716');
 
     it('should convert the currency', function (done) {
       exchange.toBTC(1000, 'USD')
         .then(function (data) {
-          expect(data).to.equal('1234.1234');
+          expect(data).to.equal('1.41442716');
           done();
         })
         .catch(done);

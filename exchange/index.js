@@ -24,5 +24,5 @@ function getTicker(options) {
 function toBTC(amount, currency, options) {
   options = options || {};
   return api.request('tobtc', { value: amount, currency: currency, apiCode: options.apiCode })
-    .then(function (amount) { return amount.replace(',', ''); });
+    .then(function (amount) { return amount.toString(); });
 }
